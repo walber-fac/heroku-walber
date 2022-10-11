@@ -9,6 +9,7 @@ package hello;
 
 import java.beans.*;
 import java.io.Serializable;
+import java.util.Calendar;
 
 
 /**
@@ -33,9 +34,20 @@ public class MessageBean implements Serializable {
         lang = value;
     }
     public String getMsg() {
+        Calendar c = Calendar.getInstance();
+        int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
         switch (this.lang){
             case "pt":
-                return "oi";
+                if(timeOfDay < 12){
+            return "Good morning";
+        }else if(timeOfDay < 16){
+            return "Good afternoon";
+        }else if(timeOfDay < 21){
+            return "Good evening";
+        }else {
+            return "Good night";
+        }
+                
             case "en":
                 return "Hello";
             case "de":
