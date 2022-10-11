@@ -9,6 +9,7 @@ package hello;
 
 import java.beans.*;
 import java.io.Serializable;
+import Greetings;
 
 /**
  *
@@ -34,7 +35,7 @@ public class MessageBean implements Serializable {
     public String getMsg() {
         switch (this.lang){
             case "pt":
-                return "Alô";
+                return getGreetings();
             case "en":
                 return "Hello";
             case "de":
