@@ -27,7 +27,7 @@ public class MessageBean implements Serializable {
     }
     
     public String getAut() {
-        return "José Viterbo";
+        return "Prof.: José Viterbo (aluno: Walber)";
     }
     
     public void setLang(String value) {
@@ -39,6 +39,17 @@ public class MessageBean implements Serializable {
         switch (this.lang){
             case "pt":
                 if(timeOfDay < 12){
+            return "Bom dia";
+        }else if(timeOfDay < 16){
+            return "Boa tarde";
+        }else if(timeOfDay < 21){
+            return "Bom anoitecer";
+        }else {
+            return "Boa noite";
+        }
+                
+            case "en":
+                if(timeOfDay < 12){
             return "Good morning";
         }else if(timeOfDay < 16){
             return "Good afternoon";
@@ -47,13 +58,26 @@ public class MessageBean implements Serializable {
         }else {
             return "Good night";
         }
-                
-            case "en":
-                return "Hello";
             case "de":
-                return "Hallo";
+                if(timeOfDay < 12){
+            return "Guten Morgen";
+        }else if(timeOfDay < 16){
+            return "Guten Tag";
+        }else if(timeOfDay < 21){
+            return "Guten Abend";
+        }else {
+            return "Guten Nacht";
+        }
             case "fr":
-                return "Bonjour";
+                if(timeOfDay < 12){
+            return "Bonne journée";
+        }else if(timeOfDay < 16){
+            return "Bonne après-midi";
+        }else if(timeOfDay < 21){
+            return "Bonsoir";
+        }else {
+            return "Bonne nuit";
+        }
         }
         return "";
     }
