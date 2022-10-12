@@ -15,7 +15,7 @@
     <body>
         <jsp:useBean id="myBean" class="hello.MessageBean"/>
         <header>
-            <h1>header jsp</h1>
+            <h1>Obrigado! Thank You! </h1>
         </header>
         <h1>Aplicativo HelloWorld</h1>
         <% String lang = request.getParameter("lang"); %>
@@ -23,7 +23,7 @@
         <jsp:getProperty name="myBean" property="msg"/>, <%=request.getParameter("nome")%>!</h2>
         <jsp:getProperty name="myBean" property="msg2"/> <jsp:getProperty name="myBean" property="aut"/>
         <footer>
-            <p>footer jsp</p>
+            <p>Vielen Dank! Merci!</p>
         </footer>
     </body>
 </html>
